@@ -1,10 +1,5 @@
 from PySide6 import QtWidgets
 
-
-from PySide6.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QPushButton, QLabel, QSpinBox, QDoubleSpinBox, QGroupBox
-
-
-
 class RandoAnimatorUI(QtWidgets.QDialog):
     def __init__(self):
         super().__init__()
@@ -14,14 +9,14 @@ class RandoAnimatorUI(QtWidgets.QDialog):
     def build_ui(self):
 
         layout = QtWidgets.QVBoxLayout(self)
-        layout.setContentsMargins(8, 8, 8, 8)
+        layout.setContentsMargins(10, 10, 10, 10)
         layout.setSpacing(4)
 
         timing_group = QtWidgets.QGroupBox("Animation Timing")
         timing_layout = QtWidgets.QHBoxLayout(timing_group)
 
         self.duration = QtWidgets.QSpinBox()
-        self.duration.setRange(1, 10000)
+        self.duration.setRange(2, 10000)
         self.duration.setValue(100)
 
         self.interval = QtWidgets.QSpinBox()
@@ -56,15 +51,15 @@ class RandoAnimatorUI(QtWidgets.QDialog):
         self.translate_max_z.setValue(0)
 
         self.translate_min_x = QtWidgets.QDoubleSpinBox()
-        self.translate_min_x.setRange(0, -1000)
+        self.translate_min_x.setRange(-1000, 0)
         self.translate_min_x.setValue(0)
 
         self.translate_min_y = QtWidgets.QDoubleSpinBox()
-        self.translate_min_y.setRange(0, -1000)
+        self.translate_min_y.setRange(-1000, 0)
         self.translate_min_y.setValue(0)
 
         self.translate_min_z = QtWidgets.QDoubleSpinBox()
-        self.translate_min_z.setRange(0, -1000)
+        self.translate_min_z.setRange(-1000, 0)
         self.translate_min_z.setValue(0)
 
         timing_layout2.addWidget(
@@ -115,15 +110,15 @@ class RandoAnimatorUI(QtWidgets.QDialog):
         self.rotation_max_z.setValue(0)
 
         self.rotation_min_x = QtWidgets.QDoubleSpinBox()
-        self.rotation_min_x.setRange(0, -180)
+        self.rotation_min_x.setRange(-180, 0)
         self.rotation_min_x.setValue(0)
         
         self.rotation_min_y = QtWidgets.QDoubleSpinBox()
-        self.rotation_min_y.setRange(0, -180)
+        self.rotation_min_y.setRange(-180, 0)
         self.rotation_min_y.setValue(0)
         
         self.rotation_min_z = QtWidgets.QDoubleSpinBox()
-        self.rotation_min_z.setRange(0, -180)
+        self.rotation_min_z.setRange(-180, 0)
         self.rotation_min_z.setValue(0)
 
         rotation_layout.addWidget(
@@ -162,27 +157,27 @@ class RandoAnimatorUI(QtWidgets.QDialog):
         scale_layout = QtWidgets.QHBoxLayout(scale_group)
 
         self.scale_max_x = QtWidgets.QDoubleSpinBox()
-        self.scale_max_x.setRange(0, 100)
+        self.scale_max_x.setRange(1, 1000)
         self.scale_max_x.setValue(1)
 
         self.scale_max_y = QtWidgets.QDoubleSpinBox()
-        self.scale_max_y.setRange(0, 100)
+        self.scale_max_y.setRange(1, 1000)
         self.scale_max_y.setValue(1)
 
         self.scale_max_z = QtWidgets.QDoubleSpinBox()
-        self.scale_max_z.setRange(0, 100)
+        self.scale_max_z.setRange(1, 1000)
         self.scale_max_z.setValue(1)
 
         self.scale_min_x = QtWidgets.QDoubleSpinBox()
-        self.scale_min_x.setRange(0, -100)
+        self.scale_min_x.setRange(0.01, 1000)
         self.scale_min_x.setValue(1)
         
         self.scale_min_y = QtWidgets.QDoubleSpinBox()
-        self.scale_min_y.setRange(0, -100)
+        self.scale_min_y.setRange(0.01, 1000)
         self.scale_min_y.setValue(1)
         
         self.scale_min_z = QtWidgets.QDoubleSpinBox()
-        self.scale_min_z.setRange(0, -100)
+        self.scale_min_z.setRange(0.01, 1000)
         self.scale_min_z.setValue(1)
 
         scale_layout.addWidget(
@@ -220,8 +215,9 @@ class RandoAnimatorUI(QtWidgets.QDialog):
         self.button = QtWidgets.QPushButton("Generate")
         self.button.setFixedSize(100,30)
        
-        layout = QtWidgets.QHBoxLayout()
-        layout.addStretch()
-        layout.addWidget(self.button)
+        button_layout = QtWidgets.QHBoxLayout()
+        button_layout.addStretch()
+        button_layout.addWidget(self.button)
+        
         layout.addLayout(button_layout)
      
