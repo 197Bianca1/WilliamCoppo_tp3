@@ -39,27 +39,27 @@ class RandoAnimatorUI(QtWidgets.QDialog):
         timing_layout2 = QtWidgets.QHBoxLayout(timing_group2)
 
         self.translate_max_x = QtWidgets.QDoubleSpinBox()
-        self.translate_max_x.setRange(0, 1000)
+        self.translate_max_x.setRange(-1000, 1000)
         self.translate_max_x.setValue(0)
 
         self.translate_max_y = QtWidgets.QDoubleSpinBox()
-        self.translate_max_y.setRange(0, 1000)
+        self.translate_max_y.setRange(-1000, 1000)
         self.translate_max_y.setValue(0)
 
         self.translate_max_z = QtWidgets.QDoubleSpinBox()
-        self.translate_max_z.setRange(0, 1000)
+        self.translate_max_z.setRange(-1000, 1000)
         self.translate_max_z.setValue(0)
 
         self.translate_min_x = QtWidgets.QDoubleSpinBox()
-        self.translate_min_x.setRange(-1000, 0)
+        self.translate_min_x.setRange(-1000, 1000)
         self.translate_min_x.setValue(0)
 
         self.translate_min_y = QtWidgets.QDoubleSpinBox()
-        self.translate_min_y.setRange(-1000, 0)
+        self.translate_min_y.setRange(-1000, 1000)
         self.translate_min_y.setValue(0)
 
         self.translate_min_z = QtWidgets.QDoubleSpinBox()
-        self.translate_min_z.setRange(-1000, 0)
+        self.translate_min_z.setRange(-1000, 1000)
         self.translate_min_z.setValue(0)
 
         timing_layout2.addWidget(
@@ -98,27 +98,27 @@ class RandoAnimatorUI(QtWidgets.QDialog):
         rotation_layout = QtWidgets.QHBoxLayout(rotation_group)
 
         self.rotation_max_x = QtWidgets.QDoubleSpinBox()
-        self.rotation_max_x.setRange(0, 180)
+        self.rotation_max_x.setRange(-360, 360)
         self.rotation_max_x.setValue(0)
 
         self.rotation_max_y = QtWidgets.QDoubleSpinBox()
-        self.rotation_max_y.setRange(0, 180)
+        self.rotation_max_y.setRange(-360, 360)
         self.rotation_max_y.setValue(0)
 
         self.rotation_max_z = QtWidgets.QDoubleSpinBox()
-        self.rotation_max_z.setRange(0, 180)
+        self.rotation_max_z.setRange(-360, 360)
         self.rotation_max_z.setValue(0)
 
         self.rotation_min_x = QtWidgets.QDoubleSpinBox()
-        self.rotation_min_x.setRange(-180, 0)
+        self.rotation_min_x.setRange(-360, 360)
         self.rotation_min_x.setValue(0)
         
         self.rotation_min_y = QtWidgets.QDoubleSpinBox()
-        self.rotation_min_y.setRange(-180, 0)
+        self.rotation_min_y.setRange(-360, 360)
         self.rotation_min_y.setValue(0)
         
         self.rotation_min_z = QtWidgets.QDoubleSpinBox()
-        self.rotation_min_z.setRange(-180, 0)
+        self.rotation_min_z.setRange(-360, 360)
         self.rotation_min_z.setValue(0)
 
         rotation_layout.addWidget(
@@ -169,15 +169,15 @@ class RandoAnimatorUI(QtWidgets.QDialog):
         self.scale_max_z.setValue(1)
 
         self.scale_min_x = QtWidgets.QDoubleSpinBox()
-        self.scale_min_x.setRange(0.01, 1000)
+        self.scale_min_x.setRange(1, 1000)
         self.scale_min_x.setValue(1)
         
         self.scale_min_y = QtWidgets.QDoubleSpinBox()
-        self.scale_min_y.setRange(0.01, 1000)
+        self.scale_min_y.setRange(1, 1000)
         self.scale_min_y.setValue(1)
         
         self.scale_min_z = QtWidgets.QDoubleSpinBox()
-        self.scale_min_z.setRange(0.01, 1000)
+        self.scale_min_z.setRange(1, 1000)
         self.scale_min_z.setValue(1)
 
         scale_layout.addWidget(

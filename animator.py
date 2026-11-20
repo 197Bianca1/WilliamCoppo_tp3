@@ -32,6 +32,14 @@ class RandoAnimator:
         translate_max_y = self.ui.translate_max_y.value()
         translate_max_z = self.ui.translate_max_z.value()
 
+        # Vérification des valeurs min et max pour la translation
+        if (translate_min_x > translate_max_x or
+            translate_min_y > translate_max_y or
+            translate_min_z > translate_max_z):
+
+            cmds.warning("Translate min values must be less than or equal to translate max values.")
+            return
+
         # Rotation Min
         rotation_min_x = self.ui.rotation_min_x.value()
         rotation_min_y = self.ui.rotation_min_y.value()
@@ -41,6 +49,14 @@ class RandoAnimator:
         rotation_max_x = self.ui.rotation_max_x.value()
         rotation_max_y = self.ui.rotation_max_y.value()
         rotation_max_z = self.ui.rotation_max_z.value()
+
+        # Vérification des valeurs min et max pour la rotation
+        if(rotation_min_x > rotation_max_x or
+           rotation_min_y > rotation_max_y or
+           rotation_min_z > rotation_max_z):
+
+            cmds.warning("Rotation min values must be less than or equal to rotation max values.")
+            return
 
         # Scale Min
         scale_min_x = self.ui.scale_min_x.value()
