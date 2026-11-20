@@ -5,10 +5,13 @@ from maya import cmds
 
 class RandoAnimator:
     def __init__(self, ui):
+
+        # on fait référence a l'UI pour pouvoir récupérer les valeurs des spinbox
         self.ui = ui
 
     def animator(self):
 
+        # on récupère l'objet sélectionné dans Maya
         ob = cmds.ls(sl=True)
 
         if not ob:
